@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  /* border-style: dashed;
+  border-width: 0.01rem; */
+}
+code{
+  white-space: pre-line;
+}
+section > header{
+  font-size: 26px;
+  font-weight: bolder;
+}
