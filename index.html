@@ -8,12 +8,15 @@
   <body>
     <nav id="navbar">
       <header id="tech-doc-topic">JavaScript Function</header>
-      <a href="#Function_Definitions" class="nav-link">Function Definitions</a>
-      <a href="#Function_Parameters" class="nav-link">Function Parameters</a>
-      <a href="#Function_Invocation" class="nav-link">Function Invocation</a>
-      <a href="#Function_Call" class="nav-link">Function Call</a>
-      <a href="#Function_Apply" class="nav-link">Function Apply</a>
-      <a href="#Closures" class="nav-link">Closures</a>
+      <ul id="section-list">
+        <li><a href="#Function_Definitions" class="nav-link">Function Definitions</a></li>
+        <li><a href="#Function_Parameters" class="nav-link">Function Parameters</a></li>
+        <li><a href="#Function_Invocation" class="nav-link">Function Invocation</a></li>
+        <li><a href="#Function_Call" class="nav-link">Function Call</a></li>
+        <li><a href="#Function_Apply" class="nav-link">Function Apply</a></li>
+        <li><a href="#Closures" class="nav-link">Closures</a></li>
+        <li><a href="#References" class="nav-link">References</a></li>
+      </ul>
     </nav>
     <main id="main-doc">
       <!--#7 The .main-section elements should contain at least 5 li items total (not each). -->
@@ -70,81 +73,81 @@
           </div>
           <p>The function above ends with a semicolon because it is a part of an executable statement.</p>
 
-          <h3>The Function() Constructor</h3>
-            <p>As you have seen in the previous examples, JavaScript functions are defined with the function keyword.</p>
-            <p>Functions can also be defined with a built-in JavaScript function constructor called Function().</p>
-            <div class="example">
-              <h4>Example</h4>
-              <code>
-                var myFunction = new Function("a", "b", "return a * b");
-
-                var x = myFunction(4, 3); 
-              </code>
-            </div>
-            <p>You actually don't have to use the function constructor. The example above is the same as writing:</p>
-            <div class="example">
-              <h4>Example</h4>
-              <code>
-                var myFunction = function (a, b) {return a * b};
-
-                var x = myFunction(4, 3); 
-              </code>
-            </div>
-            <div class="notes">
-              <p>Most of the time, you can avoid using the new keyword in JavaScript.</p>
-            </div>
-
-            <h3>Function Hoisting</h3>
-            <p>Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.</p>
-            <p>Hoisting applies to variable declarations and to function declarations.</p>
-            <p>Because of this, JavaScript functions can be called before they are declared:</p>
+        <h3>The Function() Constructor</h3>
+          <p>As you have seen in the previous examples, JavaScript functions are defined with the function keyword.</p>
+          <p>Functions can also be defined with a built-in JavaScript function constructor called Function().</p>
+          <div class="example">
+            <h4>Example</h4>
             <code>
-              myFunction(5);
+              var myFunction = new Function("a", "b", "return a * b");
+
+              var x = myFunction(4, 3); 
+            </code>
+          </div>
+          <p>You actually don't have to use the function constructor. The example above is the same as writing:</p>
+          <div class="example">
+            <h4>Example</h4>
+            <code>
+              var myFunction = function (a, b) {return a * b};
+
+              var x = myFunction(4, 3); 
+            </code>
+          </div>
+          <div class="notes">
+            <p>Most of the time, you can avoid using the new keyword in JavaScript.</p>
+          </div>
+
+          <h3>Function Hoisting</h3>
+          <p>Hoisting is JavaScript's default behavior of moving declarations to the top of the current scope.</p>
+          <p>Hoisting applies to variable declarations and to function declarations.</p>
+          <p>Because of this, JavaScript functions can be called before they are declared:</p>
+          <code>
+            myFunction(5);
 
             function myFunction(y) {
               return y * y;
             }
-            </code>
+          </code>
             
-            <h3>Self-Invoking Functions</h3>
-              <p>Function expressions can be made "self-invoking".</p>
-              <p>A self-invoking expression is invoked (started) automatically, without being called.</p>
-              <p>Function expressions will execute automatically if the expression is followed by ().</p>
-              <p>You cannot self-invoke a function declaration.</p>
-              <p>You have to add parentheses around the function to indicate that it is a function expression:</p>
-              <div class="example">
-                <h4>Example</h4>
-                <code>
-                  (function () {
-                    var x = "Hello!!";  // I will invoke myself
-                  })(); 
-                </code>
-              </div>
-              <p>The function above is actually an anonymous self-invoking function (function without name).</p>
+          <h3>Self-Invoking Functions</h3>
+          <p>Function expressions can be made "self-invoking".</p>
+            <p>A self-invoking expression is invoked (started) automatically, without being called.</p>
+            <p>Function expressions will execute automatically if the expression is followed by ().</p>
+            <p>You cannot self-invoke a function declaration.</p>
+            <p>You have to add parentheses around the function to indicate that it is a function expression:</p>
+            <div class="example">
+              <h4>Example</h4>
+              <code>
+                (function () {
+                  var x = "Hello!!";  // I will invoke myself
+                })(); 
+              </code>
+            </div>
+            <p>The function above is actually an anonymous self-invoking function (function without name).</p>
               
-              <h3>Functions Can Be Used as Values</h3>
-                <p>JavaScript functions can be used as values:</p>
-                <div class="example">
-                  <h4>Example</h4>
-                  <code>
-                    function myFunction(a, b) {
-                      return a * b;
-                    }
+          <h3>Functions Can Be Used as Values</h3>
+            <p>JavaScript functions can be used as values:</p>
+            <div class="example">
+              <h4>Example</h4>
+              <code>
+                function myFunction(a, b) {
+                  return a * b;
+                }
                     
-                    var x = myFunction(4, 3); 
-                  </code>
-                </div>
-                <p>JavaScript functions can be used in expressions:</p>
-                <div class="example">
-                  <h4>Example</h4>
-                  <code>
-                    function myFunction(a, b) {
-                      return a * b;
-                    }
+                var x = myFunction(4, 3); 
+              </code>
+            </div>
+            <p>JavaScript functions can be used in expressions:</p>
+            <div class="example">
+              <h4>Example</h4>
+              <code>
+                function myFunction(a, b) {
+                  return a * b;
+                }
                     
-                    var x = myFunction(4, 3) * 2; 
-                  </code>
-                </div>
+                var x = myFunction(4, 3) * 2; 
+              </code>
+            </div>
 
                 <h3>Functions are Objects</h3>
                 <p>The typeof operator in JavaScript returns "function" for functions.</p>
@@ -175,61 +178,623 @@
                   <p>A function designed to create new objects, is called an object constructor.</p>
                 </div>
 
-                <h3>Arrow Functions</h3>
-                <p>Arrow functions allows a short syntax for writing function expressions.</p>
-                <p>You don't need the function keyword, the return keyword, and the curly brackets.</p>
-                <div class="example">
-                  <h4>Example</h4>
-                  <code>
-                    // ES5
-                    var x = function(x, y) {
-                      return x * y;
-                    }
-
-                    // ES6
-                    const x = (x, y) => x * y;
-                  </code>
-                </div>
-                <p>Arrow functions do not have their own this. They are not well suited for defining object methods.</p>
-                <p>Arrow functions are not hoisted. They must be defined before they are use</p>
-                <p>Using const is safer than using var, because a function expression is always constant value.</p>
-                <p>You can only omit the return keyword and the curly brackets if the function is a single statement. Because of this, it might be a good habit to always keep them:</p>
-                <div class="example">
-                  <h4>Example</h4>
-                  <code>
-                    const x = (x, y) => { return x * y }; 
-                  </code>
-                </div>
-                <div class="notes">
-                  <p>Arrow functions are not supported in IE11 or earlier.</p>
-                </div>
+            <h3>Arrow Functions</h3>
+            <p>Arrow functions allows a short syntax for writing function expressions.</p>
+            <p>You don't need the function keyword, the return keyword, and the curly brackets.p>
+            <div class="example">
+              <h4>Example</h4>
+              <code>
+                // ES5
+                var x = function(x, y) {
+                  return x * y;
+                
+                // ES6
+                const x = (x, y) => x * y;
+              </code>
+            </div>
+            <p>Arrow functions do not have their own this. They are not well suited for defininobject methods.</p>
+            <p>Arrow functions are not hoisted. They must be defined before they are use</p>
+            <p>Using const is safer than using var, because a function expression is alwayconstant value.</p>
+            <p>You can only omit the return keyword and the curly brackets if the function is single statement. Because of this, it might be a good habit to always keep them:</p>
+            <div class="example">
+              <h4>Example</h4>
+              <code>
+                const x = (x, y) => { return x * y }; 
+              </code>
+            </div>
+            <div class="notes">
+              <p>Arrow functions are not supported in IE11 or earlier.</p>
+            </div>
 
       </section>
+
       <section class="main-section" id="Function_Parameters">
-        <header>Topic 2</header>
-        <p>paragrap 2.1</p>
-        <p>paragrap 2.2</p>
+        <header>Function Parameters</header>
+          <p>A JavaScript function does not perform any checking on parameter values (arguments).</p>
+
+          <h3>Function Parameters and Arguments</h3>
+          <p>Earlier in this tutorial, you learned that functions can have parameters:</p>
+          <code>
+            function functionName(parameter1, parameter2, parameter3) {
+              // code to be executed
+            }
+          </code>
+            <p>Function parameters are the names listed in the function definition.</p>
+            <p>Function arguments are the real values passed to (and received by) the function.</p>
+
+          <h3>Parameter Rules</h3>
+          <p>JavaScript function definitions do not specify data types for parameters.</p>
+          <p>JavaScript functions do not perform type checking on the passed arguments.</p>
+          <p>JavaScript functions do not check the number of arguments received.</p>
+
+          <h3>Default Parameters</h3>
+          <p>If a function is called with missing arguments (less than declared), the missing values are set to undefined.</p>
+          <p>Sometimes this is acceptable, but sometimes it is better to assign a default value to the parameter:</p>
+          <div class="example">
+            <h4>Example</h4>
+            <code>
+              function myFunction(x, y) {
+                if (y === undefined) {
+                  y = 2;
+                }
+              }
+            </code>
+            <p>ECMAScript 2015 allows default parameter values in the function declaration: </p>
+            <code>
+              function (x, y = 2) {
+                // function code
+              }
+            </code>
+          </div>
+
+          <h3>The Arguments Object</h3>
+          <p>JavaScript functions have a built-in object called the arguments object.</p>
+          <p>The argument object contains an array of the arguments used when the function was called (invoked).</p>
+          <p>This way you can simply use a function to find (for instance) the highest value in a list of numbers:</p>
+          <div class="example">
+            <h4>Example</h4>
+            <code>
+              x = findMax(1, 123, 500, 115, 44, 88);
+
+              function findMax() {
+                var i;
+                var max = -Infinity;
+                for (i = 0; i < arguments.length; i++) {
+                  if (arguments[i] > max) {
+                    max = arguments[i];
+                  }
+                }
+                return max;
+              } 
+            </code>
+          </div>
+          <p>Or create a function to sum all input values:</p>
+          <div class="example">
+            <h4>Example</h4>
+            <code>
+              x = sumAll(1, 123, 500, 115, 44, 88);
+
+              function sumAll() {
+                var i;
+                var sum = 0;
+                for (i = 0; i < arguments.length; i++) {
+                  sum += arguments[i];
+                }
+                return sum;
+              }
+            </code>
+          </div>
+          <div class="notes">
+            <p>If a function is called with too many arguments (more than declared), these arguments can be reached using the arguments object.</p>
+          </div>
+
+          <h3>Arguments are Passed by Value</h3>
+          <p>The parameters, in a function call, are the function's arguments.</p>
+          <p>JavaScript arguments are passed by value: The function only gets to know the values, not the argument's locations.</p>
+          <p>If a function changes an argument's value, it does not change the parameter's original value.</p>
+          <p>Changes to arguments are not visible (reflected) outside the function.</p>
+
+          <h3>Objects are Passed by Reference</h3>
+          <p>In JavaScript, object references are values.</p>
+          <p>Because of this, objects will behave like they are passed by reference:</p>
+          <p>If a function changes an object property, it changes the original value.</p>
+          <p>Changes to object properties are visible (reflected) outside the function.</p>
+          
       </section>
       <section class="main-section" id="Function_Invocation">
-        <header>Topic 3</header>
-        <p>paragrap 3.1</p>
-        <p>paragrap 3.2</p>
+
+        <header>Function Invocation</header>
+
+        <p>The code inside a JavaScript function will execute when "something" invokes it.</p>
+
+        <h3>Invoking a JavaScript Function</h3>
+        <p>The code inside a function is not executed when the function is defined.</p>
+        <p>The code inside a function is executed when the function is invoked.</p>
+        <p>It is common to use the term "call a function" instead of "invoke a function".</p>
+        <p>It is also common to say "call upon a function", "start a function", or "execute a function".</p>
+        <p>In this tutorial, we will use invoke, because a JavaScript function can be invoked without being called.</p>
+
+        <h3>Invoking a Function as a Function</h3>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            function myFunction(a, b) {
+              return a * b;
+            }
+            myFunction(10, 2);           // Will return 20 
+          </code>
+        </div>
+        <p>The function above does not belong to any object. But in JavaScript there is always a default global object.</p>
+        <p>In HTML the default global object is the HTML page itself, so the function above "belongs" to the HTML page.</p>
+        <p>In a browser the page object is the browser window. The function above automatically becomes a window function.</p>
+        <p>myFunction() and window.myFunction() is the same function:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            function myFunction(a, b) {
+              return a * b;
+            }
+            window.myFunction(10, 2);    // Will also return 20 
+          </code>
+        </div>
+        <div class="notes">
+          <p>This is a common way to invoke a JavaScript function, but not a very good practice.</p>
+          <p>Global variables, methods, or functions can easily create name conflicts and bugs in the global object.</p>
+        </div>
+
+        <h3>The this Keyword</h3>
+        <p>In JavaScript, the thing called this, is the object that "owns" the current code.</p>
+        <p>The value of this, when used in a function, is the object that "owns" the function. </p>
+        <div id="notes">
+          <p>Note that this is not a variable. It is a keyword. You cannot change the value of this.</p>
+          <p>Tip: Read more about the this keyword at JS this Keyword.</p>
+        </div>
+
+        <h3>The Global Object</h3>
+        <p>When a function is called without an owner object, the value of this becomes the global object.</p>
+        <p>In a web browser the global object is the browser window.</p>
+        <p>This example returns the window object as the value of this:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var x = myFunction();            // x will be the window object
+
+            function myFunction() {
+              return this;
+            }
+          </code>
+        </div>
+        <div class="notes">
+          <p>Invoking a function as a global function, causes the value of this to be the global object.</p>
+          <p>Using the window object as a variable can easily crash your program.</p>
+        </div>
+
+        <h3>Invoking a Function as a Method</h3>
+        <p>In JavaScript you can define functions as object methods.</p>
+        <p>The following example creates an object (myObject), with two properties (firstName and lastName), and a method (fullName):</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var myObject = {
+              firstName:"John",
+              lastName: "Doe",
+              fullName: function () {
+                return this.firstName + " " + this.lastName;
+              }
+            }
+            myObject.fullName();         // Will return "John Doe" 
+          </code>
+        </div>
+        <p>The fullName method is a function. The function belongs to the object. myObject is the owner of the function.</p>
+        <p>The thing called this, is the object that "owns" the JavaScript code. In this case the value of this is myObject. </p>
+        <p>Test it! Change the fullName method to return the value of this:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var myObject = {
+              firstName:"John",
+              lastName: "Doe",
+              fullName: function () {
+                return this;
+              }
+            }
+            myObject.fullName();          // Will return [object Object] (the owner object) 
+          </code>
+        </div>
+        <div id="notes">
+          <p>Invoking a function as an object method, causes the value of this to be the object itself.</p>
+        </div>
+
+        <h3>Invoking a Function with a Function Constructor</h3>
+        <p>If a function invocation is preceded with the new keyword, it is a constructor invocation.</p>
+        <p>It looks like you create a new function, but since JavaScript functions are objects you actually create a new object:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            // This is a function constructor:
+            function myFunction(arg1, arg2) {
+              this.firstName = arg1;
+              this.lastName  = arg2;
+            }
+            
+            // This creates a new object
+            var x = new myFunction("John", "Doe");
+            x.firstName;                             // Will return "John" 
+          </code>
+        </div>
+        <p>A constructor invocation creates a new object. The new object inherits the properties and methods from its constructor. </p>
+        <div class="notes">
+          <p>The this keyword in the constructor does not have a value.</p>
+          <p>The value of this will be the new object created when the function is invoked.</p>
+        </div>
+       
       </section>
       <section class="main-section" id="Function_Call">
-        <header>Topic 4</header>
-        <p>paragrap 4.1</p>
-        <p>paragrap 4.2</p>
+        <header>Function Call</header>
+
+        <p>With the call() method, you can write a method that can be used on different objects. </p>
+
+        <h3>All Functions are Methods</h3>
+        <p>In JavaScript all functions are object methods.</p>
+        <p>If a function is not a method of a JavaScript object, it is a function of the global object (see previous chapter). </p>
+        <p>The example below creates an object with 3 properties, firstName, lastName, fullName.</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var person = {
+              firstName:"John",
+              lastName: "Doe",
+              fullName: function () {
+                return this.firstName + " " + this.lastName;
+              }
+            }
+            person.fullName();   // Will return "John Doe"  
+          </code>
+        </div>
+
+        <h3>The this Keyword</h3>
+        <p>In a function definition, this refers to the "owner" of the function.</p>
+        <p>In the example above, this is the person object that "owns" the fullName function.</p>
+        <p>In other words, this.firstName means the firstName property of this object.</p>
+        <p>Read more about the this keyword at JS this Keyword.</p>
+        
+        <h3>The JavaScript call() Method</h3>
+        <p>The call() method is a predefined JavaScript method.</p>
+        <p>It can be used to invoke (call) a method with an owner object as an argument (parameter)</p>
+        <div class="notes">
+          <p>With call(), an object can use a method belonging to another object.</p>
+        </div>
+        <p>This example calls the fullName method of person, using it on person1:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var person = {
+              fullName: function() {
+                return this.firstName + " " + this.lastName;
+              }
+            }
+            var person1 = {
+              firstName:"John",
+              lastName: "Doe"
+            }
+            var person2 = {
+              firstName:"Mary",
+              lastName: "Doe"
+            }
+            person.fullName.call(person1);  // Will return "John Doe" 
+          </code>
+        </div>
+        <p>This example calls the fullName method of person, using it on person2:
+        </p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var person = {
+              fullName: function() {
+                return this.firstName + " " + this.lastName;
+              }
+            }
+            var person1 = {
+              firstName:"John",
+              lastName: "Doe"
+            }
+            var person2 = {
+              firstName:"Mary",
+              lastName: "Doe"
+            }
+            person.fullName.call(person2);  // Will return "Mary Doe" 
+          </code>
+        </div>
+
+        <h3>The call() Method with Arguments</h3>
+        <p>The call() method can accept arguments:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var person = {
+              fullName: function(city, country) {
+                return this.firstName + " " + this.lastName + "," + city + "," + country;
+              }
+            }
+            var person1 = {
+              firstName:"John",
+              lastName: "Doe"
+            }
+            person.fullName.call(person1, "Oslo", "Norway");
+          </code>
+        </div>
+         
       </section>
+
       <section class="main-section" id="Function_Apply">
-        <header>Topic 5</header>
-        <p>paragrap 5.1</p>
-        <p>paragrap 5.2</p>
+        <header>Function Apply</header>
+
+        <h3>Method Reuse</h3>
+        <p>With the apply() method, you can write a method that can be used on different objects.</p>
+
+        <h3>The JavaScript apply() Method</h3>
+        <p>The apply() method is similar to the call() method (previous chapter).</p>
+        <p>In this example the fullName method of person is applied on person1:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var person = {
+              fullName: function() {
+                return this.firstName + " " + this.lastName;
+              }
+            }
+            var person1 = {
+              firstName: "Mary",
+              lastName: "Doe"
+            }
+            person.fullName.apply(person1);  // Will return "Mary Doe"
+          </code>
+        </div>
+
+        <h3>The Difference Between call() and apply()</h3>
+        <p>The difference is:</p>
+        <p>The call() method takes arguments separately.</p>
+        <p>The apply() method takes arguments as an array.</p>
+        <div class="notes">
+          <p>The apply() method is very handy if you want to use an array instead of an argument list.</p>
+        </div>
+
+        <h3>The apply() Method with Arguments</h3>
+        <p>The apply() method accepts arguments in an array:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var person = {
+              fullName: function(city, country) {
+                return this.firstName + " " + this.lastName + "," + city + "," + country;
+              }
+            }
+            var person1 = {
+              firstName:"John",
+              lastName: "Doe"
+            }
+            person.fullName.apply(person1, ["Oslo", "Norway"]);
+          </code>
+        </div>
+        <p>Compared with the call() method:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var person = {
+              fullName: function(city, country) {
+                return this.firstName + " " + this.lastName + "," + city + "," + country;
+              }
+            }
+            var person1 = {
+              firstName:"John",
+              lastName: "Doe"
+            }
+            person.fullName.call(person1, "Oslo", "Norway");
+          </code>
+        </div>
+
+        <h3>Simulate a Max Method on Arrays</h3>
+        <p>You can find the largest number (in a list of numbers) using the Math.max() method:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            Math.max(1,2,3);  // Will return 3 
+          </code>
+        </div>
+        <p>Since JavaScript arrays do not have a max() method, you can apply the Math.max() method instead.</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            Math.max.apply(null, [1,2,3]); // Will also return 3 
+          </code>
+        </div>
+        <p>The first argument (null) does not matter. It is not used in this example.</p>
+        <p>These examples will give the same result:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            Math.max.apply(Math, [1,2,3]); // Will also return 3  
+          </code>
+        </div>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            Math.max.apply(" ", [1,2,3]); // Will also return 3  
+          </code>
+        </div>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            Math.max.apply(0, [1,2,3]); // Will also return 3   
+          </code>
+        </div>
+
+        <h3>JavaScript Strict Mode</h3>
+        <p>In JavaScript strict mode, if the first argument of the apply() method is not an object, it becomes the owner (object) of the invoked function. In "non-strict" mode, it becomes the global object.</p>
+       
       </section>
       <section class="main-section" id="Closures">
-        <header>Topic 6</header>
-        <p>paragrap 6.1</p>
-        <p>paragrap 6.2</p>
+        <header>Closures</header>
+
+        <p>JavaScript variables can belong to the local or global scope.</p>
+        <p>Global variables can be made local (private) with closures.</p>
+
+        <h3>Global Variables</h3>
+        <p>A function can access all variables defined inside the function, like this:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            function myFunction() {
+              var a = 4;
+              return a * a;
+            } 
+          </code>
+        </div>
+        <p>But a function can also access variables defined outside the function, like this:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var a = 4;
+            function myFunction() {
+              return a * a;
+            }
+          </code>
+        </div>
+        <p>In the last example, a is a global variable. </p>
+        <p>In a web page, global variables belong to the window object.</p>
+        <p>Global variables can be used (and changed) by all scripts in the page (and in the window).</p>
+        <p>In the first example, a is a local variable.</p>
+        <p>A local variable can only be used inside the function where it is defined. It is hidden from other functions and other scripting code.</p>
+        <p>Global and local variables with the same name are different variables. Modifying one, does not modify the other. </p>
+        <div class="notes">
+          <p>Variables created without a declaration keyword (var, let, or const) are always global, even if they are created inside a function.</p>
+        </div>
+
+        <h3>Variable Lifetime</h3>
+        <p>Global variables live until the page is discarded, like when you navigate to another page or close the window.</p>
+        <p>Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.</p>
+
+        <h3>A Counter Dilemma</h3>
+        <p>Suppose you want to use a variable for counting something, and you want this counter to be available to all functions.</p>
+        <p>You could use a global variable, and a function to increase the counter:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            // Initiate counter
+            var counter = 0;
+                      
+            // Function to increment counter
+            function add() {
+              counter += 1;
+            }
+            
+            // Call add() 3 times
+            add();
+            add();
+            add();
+            
+            // The counter should now be 3  
+          </code>
+        </div>
+        <p>There is a problem with the solution above: Any code on the page can change the counter, without calling add().</p>
+        <p>The counter should be local to the add() function, to prevent other code from changing it:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            // Initiate counter
+            var counter = 0;
+
+            // Function to increment counter
+            function add() {
+              var counter = 0;
+              counter += 1;
+            }
+
+            // Call add() 3 times
+            add();
+            add();
+            add();
+
+            //The counter should now be 3. But it is 0 
+          </code>
+        </div>
+        <p>It did not work because we display the global counter instead of the local counter.</p>
+        <p>We can remove the global counter and access the local counter by letting the function return it:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            // Function to increment counter
+            function add() {
+              var counter = 0;
+              counter += 1;
+              return counter;
+            }
+
+            // Call add() 3 times
+            add();
+            add();
+            add();
+
+            //The counter should now be 3. But it is 1. 
+          </code>
+        </div>
+        <p>It did not work because we reset the local counter every time we call the function.</p>
+        <p>A JavaScript inner function can solve this.</p>
+
+        <h3>JavaScript Nested Functions</h3>
+        <p>All functions have access to the global scope.   </p>
+        <p>In fact, in JavaScript, all functions have access to the scope "above" them.</p>
+        <p>JavaScript supports nested functions. Nested functions have access to the scope "above" them.</p>
+        <p>In this example, the inner function plus() has access to the counter variable in the parent function:</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            function add() {
+              var counter = 0;
+              function plus() {counter += 1;}
+              plus();   
+              return counter;
+            } 
+          </code>
+        </div>
+        <p>This could have solved the counter dilemma, if we could reach the plus() function from the outside.</p>
+        <p>We also need to find a way to execute counter = 0 only once.</p>
+        <p>We need a closure.</p>
+
+        <h3>JavaScript Closures</h3>
+        <p>Remember self-invoking functions? What does this function do?</p>
+        <div class="example">
+          <h4>Example</h4>
+          <code>
+            var add = (function () {
+              var counter = 0;
+              return function () {counter += 1; return counter}
+            })();
+            
+            add();
+            add();
+            add();
+            
+            // the counter is now 3  
+          </code>
+        </div>
+        <h4>Example Explained</h4>
+        <p>The variable add is assigned to the return value of a self-invoking function.</p>
+        <p>The self-invoking function only runs once. It sets the counter to zero (0), and returns a function expression.</p>
+        <p>This way add becomes a function. The "wonderful" part is that it can access the counter in the parent scope.</p>
+        <p>This is called a JavaScript closure. It makes it possible for a function to have "private" variables.</p>
+        <p>The counter is protected by the scope of the anonymous function, and can only be changed using the add function.</p>
+        <div class="notes">
+          <p>A closure is a function having access to the parent scope, even after the parent function has closed.</p>
+        </div>
+         
       </section>
+
+      <section class="main-section" id="References">
+        <h2>Reference</h2>
+        <p>All the documentation can be found at: <a href="https://www.w3schools.com/" target="_blank">w3schools.com</a></p>
+      </section>
+
     </main>
   </body>
 </html>
