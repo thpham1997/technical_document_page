@@ -9,9 +9,15 @@
 code{
   white-space: pre-line;
 }
+section{
+  border-bottom: solid;
+}
 section > header{
   font-size: 26px;
   font-weight: bolder;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-top: 20px;
 }
 
 #navbar{
@@ -41,7 +47,7 @@ section > header{
 }
 
 li{
-  padding: 3vw;
+  padding: 4vh;
   border-bottom: solid black;
   border-width: 1px;
 }
@@ -51,6 +57,33 @@ li > a{
   color: black;
 }
 
-#main-doc header{
-  color: aqua;
+
+#main-doc h3{
+  text-decoration: underline;
+}
+
+p{
+  padding: 5px 0;
+}
+
+.notes{
+  margin: 5px 5px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  background: rgb(240, 224, 136);
+}
+
+.notes p {
+  background: inherit;
+}
+
+.example{
+  padding: 10px 10px;
+  background: rgb(226, 225, 225);
+  border-radius: 10px;
+  margin: 5px 5px;
+}
+
+.example *{
+  background: inherit;
 }
